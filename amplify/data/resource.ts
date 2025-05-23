@@ -7,7 +7,8 @@ const schema = a.schema({
       cuisine: a.string(),
       category: a.string(),
       priceRange: a.string(),
-      location: a.custom<{ lat: number; lng: number }>(), // nested object
+      lat: a.float(),       
+      lng: a.float(),
       rating: a.float(),
       aestheticRating: a.float(),
       tasteRating: a.float(),

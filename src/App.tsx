@@ -1249,7 +1249,7 @@ const loadFavorites = useCallback(async () => {
     });
     const validFavorites = data
       .map(f => f.restaurantId)
-      .filter(id => restaurants.some(r => r.id === id));
+      .filter((id): id is string => typeof id === 'string' && restaurants.some(r => r.id === id));
     setFavorites(validFavorites);
   } catch (error) {
     console.error("Error loading favorites:", error);
@@ -1838,7 +1838,7 @@ const loadFavorites = useCallback(async () => {
                   className={`favorite-button ${favorites.includes(selectedRestaurant.id) ? 'favorited' : ''}`}
                   onClick={() => toggleFavorite(selectedRestaurant.id)}
                 >
-                  {favorites.includes(selectedRestaurant.id) ? '♥ Favorited' : '♡ Add to Favorites'}
+                  {favorites.includes(selectedRestaurant.id) ? '♥' : '♡'}
                 </button>
               </div>
             </div>
