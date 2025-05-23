@@ -1,52 +1,3 @@
-/* Base Styles
-:root {
-  --primary-color: #2a2d3e;
-  --secondary-color: #3a3f58;
-  --accent-color: #e74c3c;
-  --text-color: #333;
-  --light-text: #f8f9fa;
-  --border-color: #e0e0e0;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --transition: all 0.3s ease;
-  --border-radius: 12px;
-  --section-padding: 2rem;
-  --max-width: 1400px;
-}
-
-.dark-theme {
-  --primary-color: #1a1d2b;
-  --secondary-color: #2a2f45;
-  --accent-color: #e74c3c;
-  --text-color: #f8f9fa;
-  --light-text: #f8f9fa;
-  --border-color: #3a3f58;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text-color);
-  background-color: #f8f9fa;
-  line-height: 1.6;
-}
-
-.dark-theme body {
-  background-color: #121420;
-}
-
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Typography */
 h1, h2, h3, h4 {
   font-weight: 600;
   line-height: 1.2;
@@ -68,7 +19,7 @@ h4 {
   font-size: 1.25rem;
 }
 
-/* Header */
+
 .app-header {
   position: fixed;
   width: 100%;
@@ -141,7 +92,6 @@ h4 {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Main Content */
 .app-main {
   flex: 1;
   padding-top: 80px;
@@ -183,7 +133,7 @@ h4 {
   gap: 2rem;
 }
 
-/* Filters Sidebar */
+
 .filters-sidebar {
   position: sticky;
   top: 100px;
@@ -333,7 +283,7 @@ h4 {
   color: var(--light-text);
 }
 
-/* Restaurant Listing */
+
 .restaurant-listing {
   padding: 1rem 0;
 }
@@ -462,7 +412,7 @@ h4 {
   opacity: 0.7;
 }
 
-/* Footer */
+
 .app-footer {
   background-color: var(--primary-color);
   color: var(--light-text);
@@ -476,7 +426,7 @@ h4 {
   opacity: 0.8;
 }
 
-/* Modal */
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -711,7 +661,6 @@ h4 {
   }
 }
 
-/* Add these to your existing CSS */
 
 .location-controls {
   background-color: var(--primary-color);
@@ -841,10 +790,8 @@ h4 {
     width: 100%;
     justify-content: center;
   }
-} */
+}
 
-
-/* Base Styles */
 :root {
   --primary-color: #2a2d3e;
   --secondary-color: #3a3f58;
@@ -914,7 +861,7 @@ h4 {
   font-size: 1.25rem;
 }
 
-/* Header */
+
 .app-header {
   position: fixed;
   width: 100%;
@@ -1016,7 +963,7 @@ h4 {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Main Content */
+
 .app-main {
   flex: 1;
   padding-top: 80px;
@@ -1147,14 +1094,14 @@ h4 {
   margin-left: 0.5rem;
 }
 
-/* Content Grid */
+
 .content-grid {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 2rem;
 }
 
-/* Filters Sidebar */
+
 .filters-sidebar {
   position: sticky;
   top: 100px;
@@ -1316,7 +1263,6 @@ h4 {
   color: var(--light-text);
 }
 
-/* Restaurant Listing */
 .restaurant-listing {
   padding: 1rem 0;
 }
@@ -1496,7 +1442,6 @@ h4 {
   opacity: 0.7;
 }
 
-/* Footer */
 .app-footer {
   background-color: var(--primary-color);
   color: var(--light-text);
@@ -1510,7 +1455,6 @@ h4 {
   opacity: 0.8;
 }
 
-/* Modals */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1751,7 +1695,6 @@ h4 {
   background-color: #c0392b;
 }
 
-/* Booking Modal */
 .booking-modal {
   background-color: var(--primary-color);
   color: var(--light-text);
