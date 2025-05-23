@@ -1,24 +1,13 @@
 h1, h2, h3, h4 {
   font-weight: 600;
   line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.75rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.25rem;
-}
-
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
 
 .app-header {
   position: fixed;
@@ -167,17 +156,6 @@ h4 {
   width: 50px;
   height: 3px;
   background-color: var(--accent-color);
-}
-
-.filter-group {
-  margin-bottom: 1.5rem;
-}
-
-.filter-group-title {
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
-  color: var(--light-text);
-  opacity: 0.9;
 }
 
 .price-range-options {
@@ -457,21 +435,26 @@ h4 {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: none;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.6);
   border: none;
-  color: var(--light-text);
-  font-size: 2rem;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   z-index: 10;
   opacity: 0.7;
-  transition: var(--transition);
 }
 
 .modal-close:hover {
   opacity: 1;
   transform: rotate(90deg);
 }
-
 .modal-image-container {
   position: relative;
   height: 300px;
@@ -682,20 +665,6 @@ h4 {
 .location-label {
   font-weight: 500;
   color: var(--light-text);
-}
-
-
-.area-select,
-.cuisine-select,
-.category-select {
-  padding: 0.75rem;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
-  color: #000000;
-  min-width: 200px;
-  font-size: 1rem;
-  appearance: none;
 }
 
 .area-select option,
@@ -1481,30 +1450,6 @@ h4 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.modal-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  color: var(--light-text);
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 10;
-  opacity: 0.7;
-  transition: var(--transition);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.modal-close:hover {
-  opacity: 1;
-  background-color: rgba(255, 255, 255, 0.1);
-}
 
 .modal-image-container {
   position: relative;
@@ -1731,12 +1676,14 @@ h4 {
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  margin-bottom: 1.5rem; 
 }
 
 .form-group label {
-  font-size: 0.9rem;
-  opacity: 0.8;
+  font-size: 1rem; 
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+  opacity: 0.9;
 }
 
 .form-group input,
@@ -1748,11 +1695,26 @@ h4 {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--light-text);
   font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .form-group textarea {
   min-height: 100px;
   resize: vertical;
+}
+
+.form-group option {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .submit-booking {

@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback, useMemo } from "react";
 import { useAuthenticator } from '@aws-amplify/ui-react';
 import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '../amplify/data/resource';
+import { useRef  } from 'react';
 
 const client = generateClient<Schema>();
 
@@ -599,6 +600,51 @@ const loadFavorites = useCallback(async () => {
     return Array.from(areas).sort();
   }, []);
 
+// const modalRef = useRef<HTMLDivElement>(null);
+
+// useEffect(() => {
+//   const handleClickOutside = (event: MouseEvent) => {
+//     if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+//       setSelectedRestaurant(null);
+//       document.body.style.overflow = 'auto';
+//     }
+//   };
+
+//   document.addEventListener('mousedown', handleClickOutside);
+//   return () => {
+//     document.removeEventListener('mousedown', handleClickOutside);
+//   };
+// }, []);
+
+const restaurantModalRef = useRef<HTMLDivElement>(null);
+const bookingModalRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as Node;
+
+    if (showBookingForm && bookingModalRef.current && !bookingModalRef.current.contains(target)) {
+      // Close only booking form
+      setShowBookingForm(false);
+    } else if (
+      !showBookingForm &&
+      selectedRestaurant &&
+      restaurantModalRef.current &&
+      !restaurantModalRef.current.contains(target)
+    ) {
+      // Close restaurant modal only if booking form is not open
+      setSelectedRestaurant(null);
+      document.body.style.overflow = 'auto';
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, [showBookingForm, selectedRestaurant]);
+
+
   return (
     <div className="app-container">
       {/* Header */}
@@ -925,7 +971,7 @@ const loadFavorites = useCallback(async () => {
       {/* Restaurant Detail Modal */}
       {selectedRestaurant && (
         <div className="modal-overlay">
-          <div className="restaurant-modal">
+          <div className="restaurant-modal" ref={restaurantModalRef}>
             <button
               onClick={() => {
                 setSelectedRestaurant(null);
@@ -1048,7 +1094,7 @@ const loadFavorites = useCallback(async () => {
       {/* Booking Form Modal */}
       {showBookingForm && bookingDetails && (
         <div className="modal-overlay">
-          <div className="booking-modal">
+          <div className="booking-modal" ref={bookingModalRef}>
             <button
               onClick={() => {
                 setShowBookingForm(false);

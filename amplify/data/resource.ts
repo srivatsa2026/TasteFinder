@@ -20,7 +20,7 @@ const schema = a.schema({
       features: a.string(),
       area: a.string(),
     })
-    .authorization((allow) => [allow.publicApiKey().to(["read"])]),
+    .authorization((allow) => [allow.publicApiKey().to(["read","delete"])]),
 
   Reservation: a
     .model({
